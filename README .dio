@@ -9,7 +9,7 @@
                         <mxGeometry x="-710" y="80" width="320" height="210" as="geometry"/>
                     </mxCell>
                 </object>
-                <mxCell id="3" value="nickname (string型,NOTNULL)&#10;email (string型,unique: true)&#10;password_confirmation(string型,NOTNULL)&#10; last_name (string型,NOTNULL)&#10;first_name (string型,NOTNULL)&#10;last_name_kana (string型,NOTNULL)&#10;first_name_kana (string型,NOTNULL)&#10;birthday(date型,NOTNULL)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;fontFamily=Garamond;fontColor=#E4FDE1;" parent="2" vertex="1">
+                <mxCell id="3" value="nickname (string型,NOTNULL)&#10;email (string型,unique: true)&#10;encrypted_password (string型,NOTNULL)&#10; last_name (string型,NOTNULL)&#10;first_name (string型,NOTNULL)&#10;last_name_kana (string型,NOTNULL)&#10;first_name_kana (string型,NOTNULL)&#10;birthday(date型,NOTNULL)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;fontFamily=Garamond;fontColor=#E4FDE1;" parent="2" vertex="1">
                     <mxGeometry y="30" width="320" height="180" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="itemsテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;" parent="1" vertex="1">
@@ -17,13 +17,13 @@
                         <mxRectangle x="-230" y="40" width="70" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="5" value="name (text型,NOTNULL) &#10;info ((text型,NOTNULL)&#10;price (integer型,NOTNULL)&#10;category(string型,NOTNULL)&#10;salesk_status (integer型,NOTNULL)&#10;shipping_fee (integer型,NOTNULL)&#10;prefecture (integer型,NOTNULL)&#10;days (integer型,NOTNULL)&#10;user (references型)&#10;purchase (reference型)&#10;image (Activestorageで実装)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=15;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#E4FDE1;" parent="4" vertex="1">
+                <mxCell id="5" value="name (string型,NOTNULL) &#10;info (text型,NOTNULL)&#10;price (integer型,NOTNULL)&#10;category_id(string型,NOTNULL)&#10;salesk_status_id (integer型,NOTNULL)&#10;shipping_fee_id (integer型,NOTNULL)&#10;prefecture_id (integer型,NOTNULL)&#10;days_id (integer型,NOTNULL)&#10;user (references型)&#10;purchase (reference型)&#10;image (Activestorageで実装)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=15;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#E4FDE1;" parent="4" vertex="1">
                     <mxGeometry y="30" width="270" height="230" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="addressテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;fillColor=#F45B69;strokeColor=#028090;fontColor=#E4FDE1;" parent="1" vertex="1">
                     <mxGeometry x="-390" y="440" width="400" height="210" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="postalcoad (string型.NOTNULL)&#10;prefecture (string型.NOTNULL)&#10;city (string型.NOTNULL)&#10;addresses (string型.NOTNULL)&#10;apartment (string型)&#10;phone_number (string型,NOTNULL)&#10;user (reference型)&#10;item (reference型)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=15;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#E4FDE1;" parent="8" vertex="1">
+                <mxCell id="9" value="postalcoad (string型.NOTNULL)&#10;prefecture_id (string型.NOTNULL)&#10;city (string型.NOTNULL)&#10;addresses (string型.NOTNULL)&#10;apartment (string型)&#10;phone_number (string型,NOTNULL)&#10;user (reference型)&#10;item (reference型)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=15;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#E4FDE1;" parent="8" vertex="1">
                     <mxGeometry y="30" width="400" height="180" as="geometry"/>
                 </mxCell>
                 <mxCell id="34" value=" purchases" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
