@@ -1,24 +1,66 @@
 # README
+## users テーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------------------------|-----------| -------------------------|
+|nickname                |  string   | null: false              |
+|email                   |  string   | null: false  unique: true|
+|encrypted_password      |  string   | null: false              |
+|last_name               |  string   | null: false              | 
+|fast_name               |  string   | null: false              |
+|last_name_kana          |  string   | null: false              |
+|fast_name_kana          |  string   | null: false              |
+|birthday                |  date     | null: false              |
 
-Things you may want to cover:
 
-* Ruby version
+### Association
+- has_many :items
+- has_many :purchases
 
-* System dependencies
 
-* Configuration
+## items テーブル
 
-* Database creation
+|     Column      |  Type     |   Options        |
+|---------------- |-----------|-----------       |
+| name            | integer   | null: false      |
+| info            | text      | null: false      |
+| category_id     | integer   | null: false      |
+| status_id       | integer   | null: false      |
+| shipping_fee_id | integer   | null: false      | 
+| prefecture_id   | integer   | null: false      |
+| days_id         | integer   | null: false      |          
+| price           | integer   | null: false      |
+| user            | references|foreign_key: true |
+### Association
 
-* Database initialization
+- belongs_to :user
+- has_one :purchase
+ 
 
-* How to run the test suite
+## address テーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|     Column       |  Type     |   Option         |
+|----------------  |-----------|------------------|
+| postalcoad       |  string   | null: false      | 
+| prefecture_id    |  string   | null: false      |
+| city             |  string   | null: false      | 
+| addresses        |  string   | null: false      |
+| apartment        |  string   |                  |
+| phon_number      |  string   | null: false      |
+| purchase         | references| foreign_key: true
 
-* Deployment instructions
+### Association 
+- belongs_to :purchase
 
-* ...
+
+
+## purchases テーブル
+|     Column       |  Type     |   Options        |
+|----------------  |-----------|----------------- |
+| user             | references|foreign_key: true |
+| item             | references|foreign_key: true |
+
+### Association 
+- belongs_to :user
+- belongs_to :item
+- has_one :addres 
