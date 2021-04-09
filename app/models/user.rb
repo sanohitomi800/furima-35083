@@ -5,13 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          with_options presence: true do
-         validates :nickname, presence:true
+         validates :nickname
          validates :last_name, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "Last name Full-width characters"}
          validates :fast_name,  format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "Fast name Full-width characters"}
          validates :last_name_kana,format: {with: /\A[ァ-ヶー－]+\z/, message: "Last name kana Full-width katakana characters"} 
          validates :fast_name_kana, format: {with: /\A[ァ-ヶー－]+\z/, message: "Fast name kana Full-width katakana characters"}
-         validates :birthday, presence: true     
-         validates :encrypted_password,:password,:password_confirmation,length:{minimum:6},format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/,message:"Password Include both letters and numbers"}
+         validates :birthday     
+         validates :password,length:{minimum:6},format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message:"Password Include both letters and numbers"}
         end
         
         has_many :items
