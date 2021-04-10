@@ -10,7 +10,7 @@ class User < ApplicationRecord
          validates :password,length:{minimum:6},format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message:"Password Include both letters and numbers"}
         end
         
-        with_options presence:true, format: {with: /\A[ぁ-んァ-ン一-龥々]+\z/} do 
+        with_options presence:true, format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/} do 
         validates :last_name
         validates :fast_name
         end 
