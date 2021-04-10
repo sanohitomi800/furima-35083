@@ -20,8 +20,8 @@ class User < ApplicationRecord
         validates :fast_name_kana   
         end
         
-        has_many :items
-        has_many :purchases
+        # has_many :items
+        # has_many :purchases
         
         
 end
