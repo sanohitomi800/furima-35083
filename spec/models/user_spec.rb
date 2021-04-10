@@ -34,18 +34,18 @@ RSpec.describe User, type: :model do
             expect(another_user.errors.full_messages).to include("Email has already been taken")
           end       
           it 'emailに＠がなければ登録できない' do
-            @user.email = '@'
+            @user.email = 'email'
             @user.valid?
             expect(@user.errors.full_messages) .to include("Email is invalid")
           end       
           it 'passwordがなければ登録できない' do
             @user.password = ""
             @user.valid?
-            expect(@user.errors.full_messages).to include("Password can't be blank", "Password confirmation doesn't match Password")
+            expect(@user.errors.full_messages).to include("Password can't be blank")
           end       
           it 'passwordが５文字以下なら登録できない' do
-            @user.password = '12345'
-            @user.password_confirmation = '12345'
+            @user.password = '12abc'
+            @user.password_confirmation = '12abc'
             @user.valid?
             expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
           end       
@@ -96,12 +96,13 @@ RSpec.describe User, type: :model do
       it '名字は、全角（漢字・ひらがな・カタカナ）での入力でなければ登録できない' do
         @user.fast_name = "aaa"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Fast name Fast name Full-width characters")
+        
+        expect(@user.errors.full_messages).to include("Fast name is invalid")
       end
       it '名前は、全角（漢字・ひらがな・カタカナ）での入力でなければ登録できない' do
         @user.last_name = "aaa"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name Last name Full-width characters") 
+        expect(@user.errors.full_messages).to include("Last name is invalid") 
         
       end
       it 'フリガナ（名字）が空だと登録できない' do 
@@ -118,12 +119,12 @@ RSpec.describe User, type: :model do
       it '名字のフリガナは全角（カタカナ）でなければ登録できない' do 
       @user.fast_name_kana = "やまだ"
       @user.valid?
-      expect(@user.errors.full_messages).to include("Fast name kana Fast name kana Full-width katakana characters") 
+      expect(@user.errors.full_messages).to include("Fast name kana is invalid") 
       end
       it '名前のフリガナは全角（カタカナ）でなければ登録できない' do
       @user.last_name_kana = "りくたろう"
       @user.valid?
-      expect(@user.errors.full_messages).to include("Last name kana Last name kana Full-width katakana characters")
+      expect(@user.errors.full_messages).to include("Last name kana is invalid")
       end
       it "生年月日が空だと登録できない" do
       @user.birthday = nil
