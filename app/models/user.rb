@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
          with_options presence: true do
          validates :nickname
-         validates :last_name, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "Last name Full-width characters"}
-         validates :fast_name,  format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "Fast name Full-width characters"}
+         validates :last_name, format: {with: /\A[ぁ-んァ-ン一-龥]+\z/, message: "Last name Full-width characters"}
+         validates :fast_name,  format: {with: /\A[ぁ-んァ-ン一-龥]+\z/, message: "Fast name Full-width characters"}
          validates :last_name_kana,format: {with: /\A[ァ-ヶー－]+\z/, message: "Last name kana Full-width katakana characters"} 
          validates :fast_name_kana, format: {with: /\A[ァ-ヶー－]+\z/, message: "Fast name kana Full-width katakana characters"}
          validates :birthday     
