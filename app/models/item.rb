@@ -7,9 +7,9 @@ class Item < ApplicationRecord
     belongs_to :days
     #空の投稿を保存できないようにする
     validates :name, :info,  presence: true 
-  with_options presence: true, format: {with: /^[0-9a-zA-Z]*$/} do
-    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
-    presence: { message: "can't be blank"}
+  
+    with_options presence: true, format: {with: /\A[0-9a-zA-Z]*\z/} do
+    validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9_999_999 }
   end  
     
     #カテゴリーの選択が「--」の時は保存できないようにする
