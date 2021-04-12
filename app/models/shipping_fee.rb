@@ -1,4 +1,4 @@
-class Shipping_fee < ActiveHash::Base
+class ShippingFee < ActiveHash::Base
   salf.data = [
     { id: 1, name: '---'},
     { id: 2, name: '着払い(購入者負担)'},

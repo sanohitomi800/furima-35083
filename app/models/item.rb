@@ -4,7 +4,7 @@ class Item < ApplicationRecord
     belongs_to :status
     belongs_to :shipping_fee
     belongs_to :prefecture
-    belongs_to :days
+    belongs_to :day
     #空の投稿を保存できないようにする
     validates :name, :info,  presence: true 
   
@@ -15,9 +15,9 @@ class Item < ApplicationRecord
     #カテゴリーの選択が「--」の時は保存できないようにする
     validates :category_id, numericality: { other_than: 1 } 
     validates :status_id, numericality:{ other_than: 1 }
-    validates :shipping_fee, numericality:{ other_than: 1 }
+    validates :shipping_fee_id, numericality:{ other_than: 1 }
     validates :prefecture, numericality:{ other_than: 1 }
-    validates :days, numericality:{ other_than: 1 }  
+    validates :day_id, numericality:{ other_than: 1 }  
     
     
     belongs_to :user
