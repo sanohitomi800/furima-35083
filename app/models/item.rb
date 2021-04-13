@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_fee
   belongs_to :prefecture
   belongs_to :day
-
+  # 空の投稿を保存できないようにする
   validates :name, presence: true,
                    length: { maximum: 40 }
   validates :info, presence: true,
@@ -15,8 +15,8 @@ class Item < ApplicationRecord
   with_options presence: true, format: { with: /\A[0-9a-zA-Z]*\z/ } do
     validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9_999_999 }
   end
-
-
+  validates :price, numericality: true
+  # カテゴリーの選択が「--」の時は保存できないようにする
   with_options numericality: { other_than:1} do
   validates :category_id
   validates :status_id
