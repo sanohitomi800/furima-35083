@@ -6,8 +6,12 @@ class Item < ApplicationRecord
     belongs_to :prefecture
     belongs_to :day
     #空の投稿を保存できないようにする
-    validates :name, :info,  presence: true 
-  
+    validates :name, presence: true,
+                     length: { maximum: 40 }
+    validates :info, presence: true,
+                      length: { maximum: 1_000 }
+    validates :image, presence: true
+    
     with_options presence: true, format: {with: /\A[0-9a-zA-Z]*\z/} do
     validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9_999_999 }
   end  
