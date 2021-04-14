@@ -110,5 +110,5 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include ("Price is not a number")
       end
     end
-    end
+  end
 end
