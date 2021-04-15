@@ -17,12 +17,12 @@ class Item < ApplicationRecord
   end
   validates :price, numericality: true
   # カテゴリーの選択が「--」の時は保存できないようにする
-  with_options numericality: { other_than:1} do
-  validates :category_id
-  validates :status_id
-  validates :shipping_fee_id
-  validates :prefecture_id
-  validates :day_id
+  with_options numericality: { other_than: 1 } do
+    validates :category_id
+    validates :status_id
+    validates :shipping_fee_id
+    validates :prefecture_id
+    validates :day_id
   end
   belongs_to :user
   has_one_attached :image
