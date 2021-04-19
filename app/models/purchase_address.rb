@@ -1,5 +1,5 @@
 class PurchaseAddress 
-include AtiveModel::Model
+include ActiveModel::Model
 attr_accessor :postalcoad, :prefecture_id, :city, :addresses, :apartment, :phon_number, :purchase_id, :user_id, :item_id
 
 with_options presence: true do
