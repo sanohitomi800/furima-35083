@@ -13,7 +13,7 @@ with_options presence: true do
   validates :token
 end
 
-def save 
+def save
 @purchase = Purchase.create(user_id: user_id, item_id: item_id )
 
 Address.create(apartment: apartment, postalcoad: postalcoad, prefecture_id: prefecture_id, city: city, addresses: addresses, phon_number: phon_number, purchase_id: @purchase.id)
