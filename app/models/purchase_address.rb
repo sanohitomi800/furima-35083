@@ -7,7 +7,7 @@ with_options presence: true do
   validates :prefecture_id, numericality: { other_than: 1,  message: "can't be blank"}
   validates :city
   validates :addresses
-  validates :phon_number, format: {with: /\A(0{1}\d{9,10})\z/}
+  validates :phon_number, format: {with: /\A\d{10,11}\z/}
   validates :user_id
   validates :item_id
   validates :token
