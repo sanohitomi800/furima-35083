@@ -54,8 +54,8 @@ class ItemsController < ApplicationController
   end
   
   def root_item
-    if @item.user_id ！= current_user.id || @item.purchase.present?
-        redirect_to root_path
+    if @item.user_id != current_user.id || @item.purchase.present?
+      redirect_to root_path
     end
   end
 end
