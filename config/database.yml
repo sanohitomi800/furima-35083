@@ -53,3 +53,5 @@ production:
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
+
+update user set password='H19880830s' where User='root';
