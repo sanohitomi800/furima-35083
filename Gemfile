@@ -35,6 +35,12 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'gimei'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+
 end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
