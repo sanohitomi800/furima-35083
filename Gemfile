@@ -73,3 +73,4 @@ gem 'rubocop', require:false
 gem 'rubocop-rails', require:false
 gem 'payjp'
 gem "aws-sdk-s3", require: false
+gem 'rails-i18n'
