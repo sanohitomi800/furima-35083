@@ -8,15 +8,15 @@ class User < ApplicationRecord
     validates :nickname
     validates :birthday
     validates :password, length: { minimum: 6 },
-                         format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: 'Password Include both letters and numbers' }
+                         format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: "(確認)を入力してください" }
   end
 
-  with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ } do
+  with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: "は全角で入力してください" } do
     validates :last_name
     validates :fast_name
   end
 
-  with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/ } do
+  with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/ ,message:"は全角カナで入力してください"} do
     validates :last_name_kana
     validates :fast_name_kana
   end

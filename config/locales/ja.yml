@@ -19,5 +19,17 @@ ja:
         shipping_fee_id: 配送料の負担
         prefecture_id: 発送元の地域
         day_id: 発送までの日数
+      
+  activemodel:
+   attributes:  
+      purchase_address:
+        postalcoad: 郵便番号
+        prefecture_id: 発送元の地域
+        city: 市区町村
+        addresses: 番地
+        apartment: 建物名
+        phon_number: 電話番号
+        token: カード情報  
+
 
 

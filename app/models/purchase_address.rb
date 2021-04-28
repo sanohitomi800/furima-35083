@@ -3,8 +3,8 @@ include ActiveModel::Model
 attr_accessor :postalcoad, :prefecture_id, :city, :addresses, :apartment, :phon_number,:user_id, :item_id, :token
 
 with_options presence: true do
-  validates :postalcoad, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
-  validates :prefecture_id, numericality: { other_than: 1,  message: "can't be blank"}
+  validates :postalcoad, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "はハイフン(-)を入れて入力してください"}
+  validates :prefecture_id, numericality: { other_than: 1,  message: "を入力してください"}
   validates :city
   validates :addresses
   validates :phon_number, format: {with: /\A\d{10,11}\z/}
